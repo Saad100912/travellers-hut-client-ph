@@ -12,7 +12,9 @@ const Blogs = () => {
 
     useEffect(() => {
         setBlogsLoading(true);
-        fetch(`http://localhost:5000/blogs?page=${page}&&size=${size}`)
+        fetch(
+            `https://tranquil-thicket-16665.herokuapp.com/blogs?page=${page}&&size=${size}`
+        )
             .then((res) => res.json())
             .then((data) => {
                 setBlogs(data.blogs);
@@ -24,7 +26,7 @@ const Blogs = () => {
     }, [page]);
 
     // useEffect(() => {
-    //     fetch("http://localhost:5000/blogs")
+    //     fetch("https://tranquil-thicket-16665.herokuapp.com/blogs")
     //         .then((res) => res.json())
     //         .then((data) => setBlogs(data));
     // }, []);

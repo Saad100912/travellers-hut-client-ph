@@ -12,7 +12,7 @@ const ManageBlogs = () => {
             "Are you sure you want to delete this blog?"
         );
         if (proceed) {
-            fetch(`http://localhost:5000/blogs/${id}`, {
+            fetch(`https://tranquil-thicket-16665.herokuapp.com/blogs/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())
@@ -32,7 +32,7 @@ const ManageBlogs = () => {
 
     useEffect(() => {
         setManageBlogsLoading(true);
-        fetch("http://localhost:5000/manageBlogs")
+        fetch("https://tranquil-thicket-16665.herokuapp.com/manageBlogs")
             .then((res) => res.json())
             .then((data) => {
                 setBlogs(data);
