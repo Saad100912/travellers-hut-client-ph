@@ -2,63 +2,53 @@
     display: block;
     float: left;
 } */
-.my-orders-page {
+.pending-blogs-page {
     min-height: 500px;
 }
-.order-table {
+.blogs-table {
     border-collapse: collapse;
     width: 100%;
 }
-.order-table th,
+.blogs-table th,
 td {
     text-align: center;
     padding: 6px;
     border: 1px solid black;
 }
-.order-table img {
-    width: 70px;
-}
-.cancel-order-btn {
-    border: 1px solid gray;
-    border-radius: 10px;
-    padding: 5px 10px;
-    background-color: crimson;
-    color: white;
-    font-weight: 500;
-}
 
 @media only screen and (max-width: 576px) {
-    .order-table table,
-    .order-table thead,
-    .order-table tbody,
-    .order-table th,
-    .order-table td,
-    .order-table tr {
+    .blogs-table table,
+    .blogs-table thead,
+    .blogs-table tbody,
+    .blogs-table th,
+    .blogs-table td,
+    .blogs-table tr {
         display: block;
     }
 
     /* Hide table headers (but not display: none;, for accessibility) */
-    .order-table thead tr {
+    .blogs-table thead tr {
         position: absolute;
         top: -9999px;
         left: -9999px;
     }
 
-    .order-table tr {
-        border: 1px solid #ccc;
+    .blogs-table tr {
+        border: 1px solid gray;
+        margin-bottom: 10px;
     }
 
-    .order-table td {
+    .blogs-table td {
         /* Behave  like a "row" */
         border: none;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.7);
         position: relative;
         padding-left: 50%;
         white-space: normal;
         text-align: left;
     }
 
-    .order-table td:before {
+    .blogs-table td:before {
         /* Now like a table header */
         position: absolute;
         /* Top/left values mimic padding */
@@ -71,7 +61,7 @@ td {
         font-weight: bold;
     }
 
-    .order-table td:before {
+    .blogs-table td:before {
         content: attr(data-title);
     }
 }

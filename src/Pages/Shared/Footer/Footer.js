@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <div className="bg-green-300 py-5 px-10">
+        <div className="bg-green-500 py-5 px-10">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
                 <div>
                     <h3 className="font-bold text-xl mb-2">Our address</h3>
@@ -12,7 +12,7 @@ const Footer = () => {
                     <p className="mb-0">Saturday -Thursday: 11 AM – 07 PM</p>
                     <p>Friday and Holiday: 10 AM – 08 PM</p>
                     <p className="mb-0">Phone: 01710101010, 01710101010</p>
-                    <p>Email: kids@island.com</p>
+                    <p>Email: travellers@hut.com</p>
                 </div>
                 <div>
                     <h3 className="font-bold text-xl mb-2">Payment methods</h3>
@@ -47,18 +47,18 @@ const Footer = () => {
                 <div>
                     <h5 className="font-bold text-xl mb-2">Contact us:</h5>
                     <input
-                        className="my-2 p-1 w-3/4 border-2 border-gray-500 rounded"
+                        className="my-2 p-1 w-3/4 border-2 border-gray-500 rounded-lg"
                         type="email"
                         placeholder="Enter your email"
                     />
                     <br />
                     <input
-                        className="my-2 p-1 w-3/4 border-2 border-gray-500 rounded"
+                        className="my-2 p-1 w-3/4 border-2 border-gray-500 rounded-lg"
                         type="text"
                         placeholder="Enter your question or suggestion"
                     />
                     <br />
-                    <button className="bg-green-500 my-2 py-1 px-3 rounded-lg">
+                    <button className="bg-green-700 text-white font-medium my-2 py-1 px-3 rounded-lg">
                         Submit
                     </button>
                 </div>

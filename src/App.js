@@ -1,15 +1,17 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home/Home/Home";
-import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+import AdminPanel from "./Pages/AdminPanel/AdminPanel/AdminPanel";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import AuthProvider from "./context/AuthProvider";
-import Shop from "./Pages/Shop/Shop";
 import Navigation from "./Pages/Shared/Navigation/Navigation";
 import Footer from "./Pages/Shared/Footer/Footer";
-import Purchase from "./Pages/Purchase/Purchase/Purchase";
 import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
+import AddBlog from "./Pages/AddBlog/AddBlog";
+import BlogDetail from "./Pages/BlogDetail/BlogDetail";
+import EditBlog from "./Pages/AdminPanel/EditBlog/EditBlog";
+import AdminRoute from "./Pages/AdminRoute/AdminRoute";
 
 function App() {
     return (
@@ -23,8 +25,8 @@ function App() {
                     <Route exact path="/home">
                         <Home />
                     </Route>
-                    <PrivateRoute path="/dashboard">
-                        <Dashboard />
+                    <PrivateRoute path="/adminPanel">
+                        <AdminPanel />
                     </PrivateRoute>
                     <Route exact path="/login">
                         <Login />
@@ -32,11 +34,14 @@ function App() {
                     <Route exact path="/register">
                         <Register />
                     </Route>
-                    <Route exact path="/shop">
-                        <Shop />
-                    </Route>
-                    <PrivateRoute exact path="/purchase/:id">
-                        <Purchase />
+                    <PrivateRoute path="/addBlog">
+                        <AddBlog />
+                    </PrivateRoute>
+                    <PrivateRoute exact path="/blogDetail/:id">
+                        <BlogDetail />
+                    </PrivateRoute>
+                    <PrivateRoute path="/editBlog/:id">
+                        <EditBlog />
                     </PrivateRoute>
                 </Switch>
                 <Footer />

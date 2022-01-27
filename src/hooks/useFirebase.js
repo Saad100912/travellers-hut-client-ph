@@ -98,7 +98,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch("https://aqueous-forest-60906.herokuapp.com/users", {
+        fetch("http://localhost:5000/users", {
             method: method,
             headers: {
                 "content-type": "application/json",
@@ -121,10 +121,10 @@ const useFirebase = () => {
             setIsLoading(false);
         });
         return () => unsubscribed;
-    }, []);
+    }, [auth]);
 
     useEffect(() => {
-        fetch(`https://aqueous-forest-60906.herokuapp.com/users/${user.email}`)
+        fetch(`http://localhost:5000/users/${user.email}`)
             .then((res) => res.json())
             .then((data) => {
                 setAdmin(data.admin);

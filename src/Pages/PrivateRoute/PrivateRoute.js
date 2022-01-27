@@ -4,6 +4,7 @@ import useAuth from "./../../hooks/useAuth";
 
 const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLoading } = useAuth();
+
     if (isLoading) {
         return (
             <div style={{ minHeight: "600px" }}>
@@ -13,6 +14,7 @@ const PrivateRoute = ({ children, ...rest }) => {
             </div>
         );
     }
+
     return (
         <Route
             {...rest}

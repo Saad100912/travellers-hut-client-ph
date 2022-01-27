@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 import useAuth from "./../../../hooks/useAuth";
 
 const Navigation = () => {
-    const { user, logOut } = useAuth();
+    const { user, admin, logOut } = useAuth();
     return (
-        <Disclosure as="nav" className="bg-green-300">
+        <Disclosure as="nav" className="bg-green-500">
             {({ open }) => (
                 <>
                     <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -37,42 +37,32 @@ const Navigation = () => {
                                     <Link to="/home">
                                         <img
                                             className="lg:block w-20"
-                                            src="https://i.ibb.co/2sg5YvL/logo1-removebg-preview.png"
+                                            src="https://i.ibb.co/dL1JwX2/logo.png"
                                             alt="Workflow"
                                         />
                                     </Link>
                                 </div>
                                 <div className="hidden sm:block sm:ml-6">
-                                    <div className="flex space-x-4">
-                                        <Link
-                                            className="px-3 py-2 rounded-full text-gray-800 font-bold hover:bg-gray-300"
-                                            to="/shop"
-                                        >
-                                            Shop
-                                        </Link>
-                                    </div>
+                                    <div className="flex space-x-4"></div>
                                 </div>
                             </div>
                             <div className="absolute hidden inset-y-0 right-0 sm:flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                                 {user.email && (
                                     <Link
-                                        to="/dashboard"
-                                        className="px-3 py-2 rounded-full text-gray-800 font-bold hover:bg-gray-300"
+                                        to="/addBlog"
+                                        className="px-3 py-2 rounded-full border-2 border-black text-black font-bold bg-green-400 hover:bg-gray-300 mx-1"
                                     >
-                                        Dashboard
+                                        Write Blog
                                     </Link>
                                 )}
-                                <div>
-                                    {user.photoURL ? (
-                                        <img
-                                            className="h-10 w-10 rounded-full ml-2"
-                                            src={user.photoURL}
-                                            alt="profile"
-                                        />
-                                    ) : (
-                                        <p>{user.displayName}</p>
-                                    )}
-                                </div>
+                                {admin && (
+                                    <Link
+                                        to="/adminPanel"
+                                        className="px-3 py-2 rounded-full border-2 border-black text-black font-bold bg-green-400 hover:bg-gray-300 mx-1"
+                                    >
+                                        Admin Panel
+                                    </Link>
+                                )}
                                 {user.email ? (
                                     <button
                                         onClick={logOut}
@@ -94,31 +84,22 @@ const Navigation = () => {
 
                     <Disclosure.Panel className="sm:hidden">
                         <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col justify-center items-center">
-                            <Link
-                                to="/shop"
-                                className="px-3 py-2 rounded-lg text-gray-800 font-bold hover:bg-gray-300"
-                            >
-                                shop
-                            </Link>
                             {user.email && (
                                 <Link
-                                    to="/dashboard"
-                                    className="px-3 py-2 rounded-lg text-gray-800 font-bold hover:bg-gray-300"
+                                    to="/addBlog"
+                                    className="px-3 py-2 rounded-full border-2 border-black text-black font-bold bg-green-400 hover:bg-gray-300"
                                 >
-                                    Dashboard
+                                    Write Blog
                                 </Link>
                             )}
-                            <div>
-                                {user.photoURL ? (
-                                    <img
-                                        className="h-10 w-10 rounded-full ml-2"
-                                        src={user.photoURL}
-                                        alt="profile"
-                                    />
-                                ) : (
-                                    <p>{user.displayName}</p>
-                                )}
-                            </div>
+                            {admin && (
+                                <Link
+                                    to="/adminPanel"
+                                    className="px-3 py-2 rounded-full border-2 border-black text-black font-bold bg-green-400 hover:bg-gray-300"
+                                >
+                                    Admin Panel
+                                </Link>
+                            )}
                             {user.email ? (
                                 <button
                                     onClick={logOut}
