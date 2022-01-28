@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./ManageBlogs.css";
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ManageBlogs = () => {
     const [blogs, setBlogs] = useState([]);
     const [manageBlogsLoading, setManageBlogsLoading] = useState(false);
-    const history = useHistory();
 
     const handleDeleteBtn = (id) => {
         const proceed = window.confirm(
@@ -25,10 +24,6 @@ const ManageBlogs = () => {
                 });
         }
     };
-
-    // const handleEditBtn = (id) => {
-    //     history.push(`/editBlog/${id}`);
-    // };
 
     useEffect(() => {
         setManageBlogsLoading(true);

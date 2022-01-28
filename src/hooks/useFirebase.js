@@ -124,7 +124,9 @@ const useFirebase = () => {
     }, [auth]);
 
     useEffect(() => {
-        fetch(`https://tranquil-thicket-16665.herokuapp.com/${user.email}`)
+        fetch(
+            `https://tranquil-thicket-16665.herokuapp.com/users/${user.email}`
+        )
             .then((res) => res.json())
             .then((data) => {
                 setAdmin(data.admin);

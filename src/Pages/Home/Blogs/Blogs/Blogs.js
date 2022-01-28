@@ -25,12 +25,6 @@ const Blogs = () => {
             });
     }, [page]);
 
-    // useEffect(() => {
-    //     fetch("https://tranquil-thicket-16665.herokuapp.com/blogs")
-    //         .then((res) => res.json())
-    //         .then((data) => setBlogs(data));
-    // }, []);
-
     return (
         <div className="container mx-auto my-16 relative">
             <h2 className="text-5xl font-bold text-center my-12">All blogs</h2>
